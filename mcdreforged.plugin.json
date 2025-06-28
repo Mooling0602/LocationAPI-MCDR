@@ -1,0 +1,18 @@
+{
+    "id": "location_api",
+    "version": "0.0.1",
+    "name": "LocationAPI",
+    "description": {
+        "en_us": "An API to define location or positon points.",
+        "zh_cn": "一个用于定义路标和位置点的API。"
+    },
+    "author": "Mooling0602",
+    "link": "https://github.com/Mooling0602/LocationAPI-MCDR",
+    "dependencies": {
+        "mcdreforged": ">=2.1.0"
+    },
+    "entrypoint": "location_api.mcdr.entry",
+    "resources": [
+        "lang"
+    ]
+}
