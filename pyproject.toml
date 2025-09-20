@@ -1,0 +1,28 @@
+[project]
+name = "locationapi-mcdr"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcdreforged>=2.1.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=6.0",
+    "pytest-cov>=2.10",
+]
+
+[tool.uv.workspace]
+members = [
+    ".",
+]
+
+[tool.uv.sources]
+locationapi-mcdr = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "locationapi-mcdr[test]",
+]

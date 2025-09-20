@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, fields
 from typing import Optional, Self, Union
 
 Primitive = Union[str, int, float, bool, None]
@@ -38,8 +38,9 @@ class MCPosition:
     dimension: str  # example: minecraft:overworld
 
     def __str__(self):
-        fields = ", ".join(f"{k}={getattr(self, k)}" for k in self.__dataclass_fields__)
-        return f"{self.__class__.__name__}({fields})"
+        field_names = [f.name for f in fields(self)]
+        values = [f"{_name}={getattr(self, _name)}" for _name in field_names]
+        return f"{self.__class__.__name__}({', '.join(values)})"
 
 
 @dataclass
@@ -58,21 +59,22 @@ class Location:
                     )
 
     def __str__(self):
-        fields = ", ".join(f"{k}={getattr(self, k)}" for k in self.__dataclass_fields__)
-        return f"{self.__class__.__name__}({fields})"
+        field_names = [f.name for f in fields(self)]
+        values = [f"{_name}={getattr(self, _name)}" for _name in field_names]
+        return f"{self.__class__.__name__}({', '.join(values)})"
 
 
 if __name__ == "__main__":
     try:
         x = input("Type coord x: ")
         if x == "":
-            print("Coordinate imcomplete, exiting...")
+            print("Coordinate incomplete, exiting...")
             exit()
         else:
             x = float(x)
         z = input("Type coord z: ")
         if z == "":
-            print("Coordinate imcomplete, exiting...")
+            print("Coordinate incomplete, exiting...")
             exit()
         else:
             z = float(z)
