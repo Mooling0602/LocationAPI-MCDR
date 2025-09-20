@@ -1,7 +1,7 @@
 from dataclasses import dataclass, fields
-from typing import Optional, Self, Union
+from typing import Self
 
-Primitive = Union[str, int, float, bool, None]
+Primitive = str | int | float | bool | None
 OtherField = dict[str, Primitive]
 
 
@@ -47,8 +47,8 @@ class MCPosition:
 class Location:
     position: MCPosition
     name: str
-    description: Optional[str] = None
-    other: Optional[OtherField] = None
+    description: str | None = None
+    other: OtherField | None = None
 
     def __post_init__(self):
         if self.other:
@@ -114,7 +114,7 @@ if __name__ == "__main__":
                 other = None
         print("Location generating...")
         print(Location(MCPosition(point_3d, dimension), name, description, other))
-    except KeyboardInterrupt:  # Press Ctrl+C then Enter.
+    except KeyboardInterrupt:  # Press Ctrl+C then Enter to exit.
         print("Exiting script debug mode...")
-    except EOFError:  # Press Ctrl+D
+    except EOFError:  # Press Ctrl+D to exit.
         print("\nExiting script debug mode...")
