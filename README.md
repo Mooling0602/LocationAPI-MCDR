@@ -6,44 +6,18 @@ An API to define location or positon points.
 
 LocationAPI是一个用于定义Minecraft中位置点的API。它提供了Point2D、Point3D、MCPosition和Location类，可以方便地表示游戏中的坐标和位置信息。
 
-## 安装
+LocationAPI同时也是ModernTeleport（现代化传送）插件的核心依赖。
 
-```bash
-pip install -r requirements.txt
-```
-
-## 运行测试
-
-### 使用unittest运行测试
-
-```bash
-python -m unittest tests.test_location_api
-```
-
-### 使用pytest运行测试（需要先安装测试依赖）
-
-```bash
-pip install pytest pytest-cov
-pytest tests/
-```
-
-### 运行测试并生成覆盖率报告
-
-```bash
-pytest --cov=location_api tests/
-```
-
-## 类说明
-
-- `Point2D`: 表示二维坐标点(x, z)
-- `Point3D`: 表示三维坐标点(x, y, z)
-- `MCPosition`: 表示Minecraft中的位置，包含一个Point3D和维度信息
-- `Location`: 表示一个具体的位置，包含名称、描述和其他自定义属性
-
-## 调试脚本
-
-直接运行`location_api/__init__.py`可以进入交互式调试模式：
-
-```bash
-python location_api/__init__.py
+测试内容如下：
+```fish
+(locationapi-mcdr) mooling@localhost /path/to/LocationAPI-MCDR (main)> .venv/bin/python location_api/__init__.py
+Type coord x: 45
+Type coord z: 456
+Type coord y: 64
+Type dimension: minecraft:the_end
+Type location name: 小黑塔
+Type location description: 末影人刷怪塔
+Type other attributes by json string here: 
+Location generating...
+Location(position=MCPosition(point=x: 45.0, y: 64.0, z: 456.0, dimension=minecraft:the_end), name=小黑塔, description=末影人刷怪塔, other=None)
 ```

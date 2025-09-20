@@ -16,7 +16,19 @@ class Point3D:
     z: float
 
     def __str__(self) -> str:
-        return "[{}, {}, {}]".format(self.x, self.y, self.z)
+        return "x: {}, y: {}, z: {}".format(self.x, self.y, self.z)
+
+    def distance_to(self, point: Self) -> float:
+        return (
+            (self.x - point.x) ** 2 + (self.y - point.y) ** 2 + (self.z - point.z) ** 2
+        ) ** 0.5
+
+    @classmethod
+    def from_point2d(cls, point: "Point2D", y: float) -> Self:
+        return cls(x=point.x, y=y, z=point.z)
+
+    def to_point2d(self) -> "Point2D":
+        return Point2D(x=self.x, z=self.z)
 
 
 @dataclass
@@ -25,17 +37,23 @@ class Point2D:
     z: float
 
     def __str__(self) -> str:
-        return "[{}, {}]".format(self.x, self.z)
+        return "x: {}, z: {}".format(self.x, self.z)
+
+    def distance_to(self, point: Self) -> float:
+        return ((self.x - point.x) ** 2 + (self.z - point.z) ** 2) ** 0.5
 
     @classmethod
-    def from_point3d(cls, point: Point3D) -> Self:
+    def from_point3d(cls, point: "Point3D") -> Self:
         return cls(x=point.x, z=point.z)
+
+    def to_point3d(self, y: float) -> "Point3D":
+        return Point3D(x=self.x, y=y, z=self.z)
 
 
 @dataclass
 class MCPosition:
-    point: Point3D
-    dimension: str  # example: minecraft:overworld
+    point: "Point3D"
+    dimension: str  # e.g. minecraft:overworld
 
     def __str__(self):
         field_names = [f.name for f in fields(self)]
@@ -45,7 +63,7 @@ class MCPosition:
 
 @dataclass
 class Location:
-    position: MCPosition
+    position: "MCPosition"
     name: str
     description: str | None = None
     other: OtherField | None = None
