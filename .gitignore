@@ -1,5 +1,6 @@
 __pycache__/
 *.pyc
+.pyre/
 .venv/
 uv.lock
 .idea/
