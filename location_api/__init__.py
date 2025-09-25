@@ -11,6 +11,7 @@ def is_primitive(val: object) -> bool:
 
 
 @dataclass
+@beartype
 class Point3D:
     x: float
     y: float
@@ -19,22 +20,18 @@ class Point3D:
     def __str__(self) -> str:
         return "x: {}, y: {}, z: {}".format(self.x, self.y, self.z)
 
-    @beartype
     def distance_to(self, point: Self) -> float:
         return (
             (self.x - point.x) ** 2 + (self.y - point.y) ** 2 + (self.z - point.z) ** 2
         ) ** 0.5
 
-    @beartype
     def distance2d_to(self, point: Self | "Point2D") -> float:
         return ((self.x - point.x) ** 2 + (self.z - point.z) ** 2) ** 0.5
 
-    @beartype
     def height_to(self, point: Self) -> float:
         return abs(self.y - point.y)
 
     @classmethod
-    @beartype
     def from_point2d(cls, point: "Point2D", y: float) -> Self:
         return cls(x=point.x, y=y, z=point.z)
 
@@ -43,6 +40,7 @@ class Point3D:
 
 
 @dataclass
+@beartype
 class Point2D:
     x: float
     z: float
@@ -50,16 +48,13 @@ class Point2D:
     def __str__(self) -> str:
         return "x: {}, z: {}".format(self.x, self.z)
 
-    @beartype
     def distance_to(self, point: Self) -> float:
         return ((self.x - point.x) ** 2 + (self.z - point.z) ** 2) ** 0.5
 
-    @beartype
     def distance2d_to(self, point: Self | "Point3D") -> float:
         return ((self.x - point.x) ** 2 + (self.z - point.z) ** 2) ** 0.5
 
     @classmethod
-    @beartype
     def from_point3d(cls, point: "Point3D") -> Self:
         return cls(x=point.x, z=point.z)
 
