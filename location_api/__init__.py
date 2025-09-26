@@ -85,9 +85,8 @@ class Location:
             for k, v in self.other.items():
                 if not is_primitive(v):
                     raise TypeError(
-                        f"Invalid value for key '{k}': {v!r} (type {
-                            type(v).__name__
-                        }). \nReason: Nested structures are not allowed."
+                        f"Invalid value for key '{k}': {v!r} (type {type(v).__name__}). "
+                        f"Reason: Nested structures are not allowed."
                     )
 
     def __str__(self):
