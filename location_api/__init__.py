@@ -18,7 +18,7 @@ class Point3D:
     z: float
 
     def __str__(self) -> str:
-        return "x: {}, y: {}, z: {}".format(self.x, self.y, self.z)
+        return "[x: {}, y: {}, z: {}]".format(self.x, self.y, self.z)
 
     def distance_to(self, point: Self) -> float:
         return (
@@ -46,7 +46,7 @@ class Point2D:
     z: float
 
     def __str__(self) -> str:
-        return "x: {}, z: {}".format(self.x, self.z)
+        return "[x: {}, z: {}]".format(self.x, self.z)
 
     def distance_to(self, point: Self) -> float:
         return ((self.x - point.x) ** 2 + (self.z - point.z) ** 2) ** 0.5
