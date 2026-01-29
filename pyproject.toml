@@ -1,10 +1,14 @@
 [project]
-name = "locationapi-mcdr"
-version = "0.2.0"
-description = "Add your description here"
+name = "location_api"
+version = "0.2.2"
+description = "An API to define location or positon points."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["beartype>=0.20.0", "mcdreforged>=2.1.0"]
+dependencies = [
+    "beartype>=0.20.0",
+    "mcdreforged>=2.1.0",
+    "moolings-rcon-api",
+]
 
 [project.optional-dependencies]
 test = ["pytest>=6.0", "pytest-cov>=2.10"]
@@ -14,6 +18,7 @@ members = ["."]
 
 [tool.uv.sources]
 locationapi-mcdr = { workspace = true }
+moolings-rcon-api = { git = "https://github.com/Mooling0602/MoolingsRconAPI-MCDR.git" }
 
 [dependency-groups]
 dev = ["locationapi-mcdr[test]"]
