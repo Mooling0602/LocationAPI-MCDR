@@ -7,18 +7,9 @@ requires-python = ">=3.11"
 dependencies = [
     "beartype>=0.20.0",
     "mcdreforged>=2.1.0",
-    "moolings-rcon-api",
+    "moolings-rcon-api>=0.0.4",
+    "returns>=0.26.0",
 ]
 
-[project.optional-dependencies]
-test = ["pytest>=6.0", "pytest-cov>=2.10"]
-
-[tool.uv.workspace]
-members = ["."]
-
 [tool.uv.sources]
-locationapi-mcdr = { workspace = true }
 moolings-rcon-api = { git = "https://github.com/Mooling0602/MoolingsRconAPI-MCDR.git" }
-
-[dependency-groups]
-dev = ["locationapi-mcdr[test]"]
