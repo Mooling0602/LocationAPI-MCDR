@@ -1,6 +1,6 @@
 import unittest
 
-from location_api import Point2D, Point3D, MCPosition, Location
+from location_api import Location, MCPosition, Point2D, Point3D
 
 
 class TestLocationAPI(unittest.TestCase):
@@ -53,7 +53,9 @@ class TestLocationAPI(unittest.TestCase):
         point3d = Point3D(1.0, 2.0, 3.0)
         position = MCPosition(point3d, "minecraft:overworld")
         other_data = {"key1": "value1", "key2": 123}
-        location = Location(position, "Test Location", "A test location", other_data)
+        location = Location(
+            position, "Test Location", "A test location", other_data
+        )
         self.assertEqual(location.position, position)
         self.assertEqual(location.name, "Test Location")
         self.assertEqual(location.description, "A test location")
@@ -66,14 +68,21 @@ class TestLocationAPI(unittest.TestCase):
         invalid_other_data = {"key": {"nested": "value"}}
 
         with self.assertRaises(TypeError):
-            Location(position, "Test Location", "A test location", invalid_other_data)
+            Location(
+                position,
+                "Test Location",
+                "A test location",
+                invalid_other_data,  # type: ignore
+            )
 
     def test_location_string_representation(self):
         """测试Location类的字符串表示"""
         point3d = Point3D(1.0, 2.0, 3.0)
         position = MCPosition(point3d, "minecraft:overworld")
         other_data = {"key1": "value1", "key2": 123}
-        location = Location(position, "Test Location", "A test location", other_data)
+        location = Location(
+            position, "Test Location", "A test location", other_data
+        )
 
         location_str = str(location)
         self.assertIn("position=MCPosition", location_str)

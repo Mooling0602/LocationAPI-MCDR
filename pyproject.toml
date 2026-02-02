@@ -13,3 +13,6 @@ dependencies = [
 
 [tool.uv.sources]
 moolings-rcon-api = { git = "https://github.com/Mooling0602/MoolingsRconAPI-MCDR.git" }
+
+[tool.ruff]
+line-length = 79
