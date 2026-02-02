@@ -5,7 +5,7 @@ To use APIs here, you must have `mcdreforged` package installed.
 from returns.result import Success, Failure
 from returns.maybe import Some
 from mcdreforged.api.all import CommandSource, CommandContext
-from moolings_rcon_api.api import rcon_get_async
+from moolings_rcon_api.api import rcon_get
 
 # _PSI: PluginServerInterface | None = None
 
