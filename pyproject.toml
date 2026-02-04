@@ -1,14 +1,14 @@
 [project]
 name = "location_api"
 version = "0.3.0"
-description = "An API to define location or positon points."
+description = "An API to define location or position points."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "beartype>=0.20.0",
-    "mcdreforged>=2.1.0",
-    "moolings-rcon-api>=0.1.0",
-    "returns>=0.26.0",
+  "beartype>=0.20.0",
+  "mcdreforged>=2.1.0",
+  "moolings-rcon-api>=0.1.0",
+  "returns>=0.26.0",
 ]
 
 [tool.uv.sources]
@@ -16,3 +16,21 @@ moolings-rcon-api = { git = "https://github.com/Mooling0602/MoolingsRconAPI-MCDR
 
 [tool.ruff]
 line-length = 79
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.14",
+    "ty>=0.0.14",
+]
+docs = [
+    "sphinx>=6.2.1",
+    "sphinx-autobuild>=2025.8.25",
+    "sphinx-autodoc-typehints>=3.6.1",
+    "sphinx-copybutton>=0.5.2",
+    "sphinx-design>=0.7.0",
+    "sphinx-inline-tabs>=2025.12.21.14",
+    "sphinx-intl>=2.3.2",
+    "sphinx-prompt>=1.10.2",
+    "sphinx-rtd-theme>=3.0.0rc1",
+    "sphinxcontrib-mermaid>=2.0.0",
+]
