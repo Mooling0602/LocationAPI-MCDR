@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Mooling0602
+# This file is distributed under the same license as the LocationAPI
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: LocationAPI \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 16:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/contents/api/core/data_types.rst:3
+msgid "Data Types"
+msgstr "数据类型"
+
+#: ../../source/contents/api/core/data_types.rst:5
+msgid ""
+"Here are the data types provided by LocationAPI, they helps you to locate"
+" players and manage locations more easily."
+msgstr "这里列出了 LocationAPI 提供的数据类型，它们可以帮助你更轻松地定位玩家和管理位置。"
+
+#: ../../source/contents/api/core/data_types.rst:8
+msgid "Point2D"
+msgstr "Point2D（二维点）"
+
+#: ../../source/contents/api/core/data_types.rst:10
+msgid "Represents a 2D point (x, z)."
+msgstr "表示一个二维点 (x, z)"
+
+#: location_api.Point2D:1 of
+msgid "Define a 2D point with x and z coordinates."
+msgstr "使用 x 和 z 坐标定义一个二维点。"
+
+#: location_api.Point2D:3 of
+msgid ""
+"This class represents a point in 2D space with x and z coordinates. It "
+"uses floating-point precision for coordinate values."
+msgstr "这个类表示一个二维平面中的点，具有 x 和 z 坐标。它使用浮点精度来表示坐标值。"
+
+#: location_api.Point2D.x:1 location_api.Point3D.x:1 of
+msgid "The x-coordinate of the point."
+msgstr "该点的 x 坐标。"
+
+#: location_api.Point2D.z:1 location_api.Point3D.z:1 of
+msgid "The z-coordinate of the point."
+msgstr "该点的 z 坐标。"
+
+#: location_api.Point2D.distance_to:1 location_api.Point3D.distance_to:1 of
+msgid "Calculate the Euclidean distance between this point and another point."
+msgstr "计算该点和另一个点之间的欧几里德距离。"
+
+#: ../../source/contents/api/core/data_types.rst
+msgid "参数"
+msgstr ""
+
+#: location_api.Point2D.distance_to:3 of
+msgid "The other 2D point to calculate the distance to."
+msgstr "用于计算距离的另一个二维点。"
+
+#: ../../source/contents/api/core/data_types.rst
+msgid "返回"
+msgstr ""
+
+#: location_api.Point2D.distance_to:5 location_api.Point3D.distance_to:5 of
+msgid "The Euclidean distance between this point and another point."
+msgstr "该点和另一个点之间的欧几里德距离。"
+
+#: location_api.Point2D.distance2d_to:1 location_api.Point3D.distance2d_to:1 of
+msgid "Calculate the 2D Euclidean distance between this point and another point."
+msgstr "计算该点和另一个点之间的平面欧几里德距离。"
+
+#: location_api.Point2D.distance2d_to:3 location_api.Point3D.distance2d_to:3 of
+msgid "The other 2D or 3D point to calculate the distance to."
+msgstr "用于计算距离的另一个二维或三维点。"
+
+#: location_api.Point2D.distance2d_to:5 location_api.Point3D.distance2d_to:5 of
+msgid "The 2D Euclidean distance between this point and another point."
+msgstr "该点和另一个点之间的平面欧几里德距离。"
+
+#: location_api.Point2D.from_point3d:1 location_api.Point3D.to_point2d:1 of
+msgid "Create a 2D point from a 3D point."
+msgstr "从一个三维点实例创建一个二维点实例。"
+
+#: location_api.Point2D.from_point3d:3 of
+msgid "The 3D point to create a 2D point from."
+msgstr "用于创建二维点的三维点实例。"
+
+#: location_api.Point2D.from_point3d:5 location_api.Point3D.to_point2d:3 of
+msgid "The 2D point instance."
+msgstr "一个二维点实例"
+
+#: location_api.Point2D.to_point3d:1 of
+msgid "Create a 3d point from a 2d point and a height as y coordinate."
+msgstr "从一个二维点实例和作为高度的 y 坐标创建一个三维点实例。"
+
+#: location_api.Point2D.to_point3d:3 of
+msgid "The height of the 3d point."
+msgstr "三维点的高度。"
+
+#: location_api.Point2D.to_point3d:5 of
+msgid "The 3d point instance."
+msgstr "一个三维点实例。"
+
+#: ../../source/contents/api/core/data_types.rst:16
+msgid "Point3D"
+msgstr "Point3D（三维点）"
+
+#: ../../source/contents/api/core/data_types.rst:18
+msgid "Represents a 3D point (x, y, z)."
+msgstr "表示一个三维点 (x, y, z)"
+
+#: location_api.Point3D:1 of
+msgid "Define a 3D point with x, y, z coordinates."
+msgstr "使用 x、y、z 坐标定义一个三维点。"
+
+#: location_api.Point3D:3 of
+msgid ""
+"This class represents a point in 3D space with x, y, and z coordinates. "
+"It uses floating-point precision for coordinate values."
+msgstr "这个类表示一个三维平面中的点，具有 x、y、z 坐标。它使用浮点精度来表示坐标值。"
+
+#: location_api.Point3D.y:1 of
+msgid "The y-coordinate of the point."
+msgstr "该点的 y 坐标。"
+
+#: location_api.Point3D.distance_to:3 of
+msgid "The other 3D point to calculate the distance to."
+msgstr "要计算距离的另一个三维点。"
+
+#: location_api.Point3D.height_to:1 of
+msgid "Calculate the height difference between this point and another point."
+msgstr "计算该点与另一个点的高度差。"
+
+#: location_api.Point3D.height_to:3 of
+msgid "The other 3D point to calculate the height difference to."
+msgstr "要计算高度差的另一个三维点。"
+
+#: location_api.Point3D.height_to:5 of
+msgid "The height difference between this point and another point."
+msgstr "该点与另一个点的高度差。"
+
+#: location_api.Point3D.from_point2d:1 of
+msgid "Create a 3D point from a 2D point and a height as y coordinate."
+msgstr "从一个二维点和一个高度创建一个三维点。"
+
+#: location_api.Point3D.from_point2d:3 of
+msgid "The 2D point to create a 3D point from."
+msgstr "要创建三维点的二维点。"
+
+#: location_api.Point3D.from_point2d:4 of
+msgid "The height of the 3D point."
+msgstr "三维点的高度。"
+
+#: location_api.Point3D.from_point2d:6 of
+msgid "The 3D point instance."
+msgstr "一个三维点实例"
+
+#: ../../source/contents/api/core/data_types.rst:24
+msgid "MCPosition"
+msgstr "MCPosition（Minecraft 位置）"
+
+#: ../../source/contents/api/core/data_types.rst:26
+msgid "Represents a specific position in a Minecraft dimension."
+msgstr "表示一个在 Minecraft 维度中的特定位置。"
+
+#: location_api.MCPosition:1 of
+msgid "Define a Minecraft position with a 3D point and a dimension."
+msgstr "使用一个三维点实例和一个维度字符串定义一个 Minecraft 位置。"
+
+#: location_api.MCPosition:3 of
+msgid ""
+"This class represents a position in Minecraft with a 3D point and a "
+"dimension. It uses floating-point precision for coordinate values."
+msgstr "这个类使用一个三维点和一个维度字符串表示一个在 Minecraft 维度中的特定位置。它使用浮点精度来表示坐标值。"
+
+#: location_api.MCPosition.point:1 of
+msgid "The 3D point of the position."
+msgstr "该位置的三维点。"
+
+#: location_api.MCPosition.dimension:1 of
+msgid "The dimension string of the position."
+msgstr "该位置的维度字符串。"
+
+#: location_api.MCPosition.x:1 of
+msgid "The x coordinate of the position."
+msgstr "该位置的 x 坐标。"
+
+#: location_api.MCPosition.y:1 of
+msgid "The y coordinate of the position."
+msgstr "该位置的 y 坐标。"
+
+#: location_api.MCPosition.z:1 of
+msgid "The z coordinate of the position."
+msgstr "该位置的 z 坐标。"
+
+#: ../../source/contents/api/core/data_types.rst:32
+msgid "Location"
+msgstr "Location（地点）"
+
+#: ../../source/contents/api/core/data_types.rst:34
+msgid "Represents a saved location with name, description and extra fields."
+msgstr "表示一个已保存的地点，带有名字、说明和其他额外信息。"
+
+#: location_api.Location:1 of
+msgid "Define a location with a name, description, and other fields."
+msgstr "定义一个地点，带有名字、说明和其他额外信息。"
+
+#: location_api.Location:3 of
+msgid ""
+"This class represents a location in Minecraft with a name, description, "
+"and other fields. It uses floating-point precision for coordinate values."
+msgstr "这个类表示一个在 Minecraft 中的地点，带有名字、说明和其他额外信息。它使用浮点精度来表示坐标值。"
+
+#: location_api.Location.position:1 of
+msgid "The position data of the location."
+msgstr "该地点的位置数据。"
+
+#: location_api.Location.name:1 of
+msgid "The name of the location."
+msgstr "该地点的名字。"
+
+#: location_api.Location.description:1 of
+msgid "The description of the location."
+msgstr "该地点的说明。"
+
+#: location_api.Location.other:1 of
+msgid "Other informations about the location."
+msgstr "其他关于该地点的信息。"
+
+#: location_api.Location.x:1 of
+msgid "The x-coordinate of the location."
+msgstr "该地点的 x 坐标。"
+
+#: location_api.Location.y:1 of
+msgid "The y-coordinate of the location."
+msgstr "该地点的 y 坐标。"
+
+#: location_api.Location.z:1 of
+msgid "The z-coordinate of the location."
+msgstr "该地点的 z 坐标。"

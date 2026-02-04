@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Mooling0602
+# This file is distributed under the same license as the LocationAPI
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: LocationAPI \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 16:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/contents/api/core/index.rst:13
+msgid "Data Types"
+msgstr "数据类型"
+
+#: ../../source/contents/api/core/index.rst:3
+msgid "Core APIs"
+msgstr "核心 API"
+
+#: ../../source/contents/api/core/index.rst:5
+msgid "API path: ``location_api``"
+msgstr "接口路径：``location_api``"
+
+#: ../../source/contents/api/core/index.rst:9
+msgid "Real path is ``location_api.__init__``"
+msgstr "实际路径位于 ``location_api.__init__``"
+
+#: location_api:1 of
+msgid ""
+"Location API for storing and manipulating Minecraft coordinates and "
+"locations."
+msgstr "LocationAPI，用于存储和操作 Minecraft 坐标和位置。"
+
+#: location_api:3 of
+msgid ""
+"This module provides a set of dataclasses to represent points in 2D and "
+"3D space, Minecraft positions (point + dimension), and named locations "
+"with metadata."
+msgstr "此模块提供一组数据类来表示二维和三维空间中的点、Minecraft 位置（点 + 维度）以及具有元数据的命名位置。"

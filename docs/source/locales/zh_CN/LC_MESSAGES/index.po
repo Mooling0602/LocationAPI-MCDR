@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Mooling0602
+# This file is distributed under the same license as the LocationAPI
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: LocationAPI \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 16:21+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/index.rst:8
+msgid "Installation"
+msgstr "安装指南"
+
+#: ../../source/index.rst:8
+msgid "Code References"
+msgstr "代码参考"
+
+#: ../../source/index.rst:8
+msgid "Home"
+msgstr "主页"
+
+#: ../../source/index.rst:2
+msgid "LocationAPI documentation"
+msgstr "LocationAPI 文档"
+
+#: ../../source/index.rst:4
+msgid "**English** | `中文（简体） <https://docs.clemooling.top/location_api/zh_CN>`__"
+msgstr ""
+
+#: ../../source/index.rst:6
+msgid ""
+"Here is the documentation for LocationAPI, a plugin for MCDR that "
+"provides useful APIs for managing locations."
+msgstr "这里是 LocationAPI 的文档，一个提供用于管理路径点的实用API的 MCDR 插件。"
+
+#: ../../source/index.rst:16
+msgid "Indices and tables"
+msgstr "索引和搜索"
+
+#: ../../source/index.rst:18
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../../source/index.rst:19
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../../source/index.rst:20
+msgid ":ref:`search`"
+msgstr ""
+
+#~ msgid "Contents:"
+#~ msgstr "目录"
+
+#~ msgid ""
+#~ "Add your content using ``reStructuredText``"
+#~ " syntax. See the `reStructuredText "
+#~ "<https://www.sphinx-"
+#~ "doc.org/en/master/usage/restructuredtext/index.html>`_ "
+#~ "documentation for details."
+#~ msgstr ""
+#~ "使用 ``reStructuredText`` 语法来添加你的内容。参见 "
+#~ "`reStructuredText <https://www.sphinx-"
+#~ "doc.org/en/master/usage/restructuredtext/index.html>`_ "
+#~ "文档以获取详细信息。"
+
+#~ msgid "Develop"
+#~ msgstr "开发"
+
+#~ msgid "Thanks To"
+#~ msgstr "致谢"
+
+#~ msgid ""
+#~ "from sphinx import _in_development .. "
+#~ "LocationAPI documentation master file, created"
+#~ " by"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "sphinx-quickstart on Wed Feb  4 "
+#~ "11:15:01 2026. You can adapt this "
+#~ "file completely to your liking, but "
+#~ "it should at least contain the "
+#~ "root `toctree` directive."
+#~ msgstr ""
+

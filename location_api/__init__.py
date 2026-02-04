@@ -2,12 +2,6 @@
 
 This module provides a set of dataclasses to represent points in 2D and 3D space,
 Minecraft positions (point + dimension), and named locations with metadata.
-
-Key classes:
-    - :data:`Point2D`: Represents a 2D point (x, z).
-    - :data:`Point3D`: Represents a 3D point (x, y, z).
-    - :data:`MCPosition`: Represents a specific position in a Minecraft dimension.
-    - :data:`Location`: Represents a saved location with name, description and extra fields.
 """
 from beartype import beartype
 from dataclasses import dataclass, fields
@@ -45,17 +39,16 @@ class Point3D:
 
     This class represents a point in 3D space with x, y, and z coordinates.
     It uses floating-point precision for coordinate values.
-
-    :param x: The x-coordinate of the point
-    :type x: float
-    :param y: The y-coordinate of the point
-    :type y: float
-    :param z: The z-coordinate of the point
-    :type z: float
     """
     x: float
+    """The x-coordinate of the point.
+    """
     y: float
+    """The y-coordinate of the point.
+    """
     z: float
+    """The z-coordinate of the point.
+    """
 
     def __str__(self) -> str:
         return "[{}, {}, {}]".format(self.x, self.y, self.z)
@@ -92,7 +85,7 @@ class Point3D:
     @classmethod
     def from_point2d(cls, point: "Point2D", y: float) -> Self:
         """Create a 3D point from a 2D point and a height as y coordinate.
-        
+
         :param point: The 2D point to create a 3D point from.
         :param y: The height of the 3D point.
 
@@ -115,14 +108,13 @@ class Point2D:
 
     This class represents a point in 2D space with x and z coordinates.
     It uses floating-point precision for coordinate values.
-
-    :param x: The x-coordinate of the point.
-    :type x: float
-    :param z: The z-coordinate of the point.
-    :type z: float
     """
     x: float
+    """The x-coordinate of the point.
+    """
     z: float
+    """The z-coordinate of the point.
+    """
 
     def __str__(self) -> str:
         return "[{}, {}]".format(self.x, self.z)
@@ -171,25 +163,30 @@ class MCPosition:
 
     This class represents a position in Minecraft with a 3D point and a dimension.
     It uses floating-point precision for coordinate values.
-
-    :param point: The 3D point of the position.
-    :type point: Point3D
-    :param dimension: The dimension of the position.
-    :type dimension: str
     """
     point: "Point3D"
+    """The 3D point of the position.
+    """
     dimension: str  # e.g. minecraft:overworld
+    """The dimension string of the position.
+    """
 
     @property
     def x(self) -> float:
+        """The x coordinate of the position.
+        """
         return self.point.x
 
     @property
     def y(self) -> float:
+        """The y coordinate of the position.
+        """
         return self.point.y
 
     @property
     def z(self) -> float:
+        """The z coordinate of the position.
+        """
         return self.point.z
 
 
@@ -205,29 +202,36 @@ class Location:
 
     This class represents a location in Minecraft with a name, description, and other fields.
     It uses floating-point precision for coordinate values.
-
-    :param name: The name of the location.
-    :type name: str
-    :param description: The description of the location.
-    :type description: str | None
-    :param other: Other fields of the location.
-    :type other: :data:`OtherField` | None
     """
     position: "MCPosition"
+    """The position data of the location.
+    """
     name: str
+    """The name of the location.
+    """
     description: str | None = None
+    """The description of the location.
+    """
     other: OtherField | None = None
+    """Other informations about the location.
+    """
 
     @property
     def x(self) -> float:
+        """The x-coordinate of the location.
+        """
         return self.position.x
 
     @property
     def y(self) -> float:
+        """The y-coordinate of the location.
+        """
         return self.position.y
 
     @property
     def z(self) -> float:
+        """The z-coordinate of the location.
+        """
         return self.position.z
 
     def __post_init__(self):

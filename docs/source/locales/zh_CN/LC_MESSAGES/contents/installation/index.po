@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Mooling0602
+# This file is distributed under the same license as the LocationAPI
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: LocationAPI \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 17:11+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/contents/installation/index.rst:2
+msgid "Installation"
+msgstr "安装指南"
+
+#: ../../source/contents/installation/index.rst:4
+msgid ""
+"LocationAPI has been included in the `PluginCatalogue "
+"<https://github.com/MCDReforged/PluginCatalogue>`__ as an MCDR plugin, so"
+" you can get it from there."
+msgstr ""
+"LocationAPI 已作为 MCDR 插件收录在 `插件仓库 "
+"<https://github.com/MCDReforged/PluginCatalogue>`__ 中，你可以从那里获取它。"
+
+#: ../../source/contents/installation/index.rst:7
+msgid "Install with MCDR command"
+msgstr "使用 MCDR 命令安装"
+
+#: ../../source/contents/installation/index.rst:9
+msgid ""
+"Use the following command to install LocationAPI automatically in MCDR "
+"console:"
+msgstr "使用下面的命令，自动在 MCDR 控制台中安装 LocationAPI"
+
+#: ../../source/contents/installation/index.rst:16
+msgid "Install manually"
+msgstr "手动安装"
+
+#: ../../source/contents/installation/index.rst:18
+msgid "You can get the ``*.mcdr`` plugin packages from:"
+msgstr "你可以从这些地方获取 ``*.mcdr`` 插件包："
+
+#: ../../source/contents/installation/index.rst:20
+msgid "`GitHub Releases <https://github.com/Mooling0602/LocationAPI/releases>`__"
+msgstr "`GitHub 发行页面 <https://github.com/Mooling0602/LocationAPI/releases>`__"
+
+#: ../../source/contents/installation/index.rst:21
+msgid "`PluginCatalogue Website <https://mcdreforged.com/plugin/location_api>`__"
+msgstr "`插件仓库网站 <https://mcdreforged.com/plugin/location_api>`__"
+
+#: ../../source/contents/installation/index.rst:23
+msgid ""
+"Then put the file example ``LocationAPI-v0.3.0.mcdr`` into the "
+"``/path/to/mcdr_env/plugins`` folder. Usually, you have to install "
+"dependencies this plugin needs. For MCDR plugins, do the same option that"
+" just mentioned. For Python(PyPI) packages, install them into your Python"
+" environment."
+msgstr "然后把这个文件比如叫 ``LocationAPI-v0.3.0.mcdr`` 放到 ``/path/to/mcdr_env/plugins`` 文件夹下。"
+"通常情况下你需要去安装这个插件需要的依赖。"
+"对于 MCDR 插件，执行刚才所提及的相同操作。"
+"对于 Python(PyPI) 包，将它们安装到你的 Python 环境中。"
+
+#: ../../source/contents/installation/index.rst:28
+msgid "Here are dependencies of this plugin:"
+msgstr "下面是这个插件所需要的依赖："
+
+#: ../../source/contents/installation/index.rst:32
+msgid ""
+"Assuming you have installed and configured MCDReforged. If not, please "
+"first visit the `Docs <https://mcdreforged.com>`__ to install and "
+"configure MCDR."
+msgstr "假设你已经安装和配置好了 MCDReforged。否则，请"
+"先访问 `文档 <https://mcdreforged.com>`__ 来安装以及配置 MCDR。"
+
+#: ../../source/contents/installation/index.rst:37
+msgid "MCDR plugins"
+msgstr "MCDR 插件"
+
+#: ../../source/contents/installation/index.rst:38
+msgid "Python(PyPI) packages"
+msgstr "Python(PyPI) 包"
+
+#: ../../source/contents/installation/index.rst:39
+msgid "`MoolingsRconAPI <https://mcdreforged.com/plugin/moolings_rcon_api>`__"
+msgstr "`MoolingsRconAPI <https://mcdreforged.com/plugin/moolings_rcon_api>`__"
+
+#: ../../source/contents/installation/index.rst:40
+msgid "`beartype <https://pypi.org/project/beartype>`__"
+msgstr ""
+
+#: ../../source/contents/installation/index.rst:42
+msgid "`returns <https://pypi.org/project/returns>`__"
+msgstr ""
+
+#~ msgid "from sphinx.locale import __ Installation ============"
+#~ msgstr "安装指南"

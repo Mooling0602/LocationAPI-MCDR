@@ -8,3 +8,4 @@ sphinx-prompt
 sphinxcontrib-mermaid
 sphinx-inline-tabs
 sphinx-design
+sphinxcontrib.asciinema

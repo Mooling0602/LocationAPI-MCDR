@@ -32,5 +32,6 @@ docs = [
     "sphinx-intl>=2.3.2",
     "sphinx-prompt>=1.10.2",
     "sphinx-rtd-theme>=3.0.0rc1",
+    "sphinxcontrib-asciinema>=0.4.3",
     "sphinxcontrib-mermaid>=2.0.0",
 ]
