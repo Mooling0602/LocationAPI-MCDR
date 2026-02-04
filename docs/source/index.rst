@@ -1,7 +1,7 @@
 LocationAPI documentation
 =========================
 
-**English** | `中文（简体） <https://docs.clemooling.top/location_api/zh_CN>`__
+`English <https://docs.clemooling.top/location_api/en_US>`__ | `中文（简体） <https://docs.clemooling.top/location_api/zh_CN>`__
 
 Here is the documentation for LocationAPI, a plugin for MCDR that provides useful APIs for managing locations.
 

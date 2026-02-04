@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationAPI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-04 16:21+0800\n"
+"POT-Creation-Date: 2026-02-04 18:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -37,7 +37,9 @@ msgid "LocationAPI documentation"
 msgstr "LocationAPI 文档"
 
 #: ../../source/index.rst:4
-msgid "**English** | `中文（简体） <https://docs.clemooling.top/location_api/zh_CN>`__"
+msgid ""
+"`English <https://docs.clemooling.top/location_api/en_US>`__ | `中文（简体） "
+"<https://docs.clemooling.top/location_api/zh_CN>`__"
 msgstr ""
 
 #: ../../source/index.rst:6
@@ -95,5 +97,10 @@ msgstr ""
 #~ "file completely to your liking, but "
 #~ "it should at least contain the "
 #~ "root `toctree` directive."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**English** | `中文（简体） "
+#~ "<https://docs.clemooling.top/location_api/zh_CN>`__"
 #~ msgstr ""
 

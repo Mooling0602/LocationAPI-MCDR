@@ -1,6 +1,6 @@
 """This module aims to provide apis to locate the position of any actual player.
 
-To use APIs here, you must have `mcdreforged` package installed.
+To use APIs here, you must have set up MCDReforged in your environment.
 """
 import asyncio
 import re
@@ -122,6 +122,14 @@ def safe_parse_dim(dim_str: str, player: str) -> str:
 
 
 async def get_player_pos(player: str) -> Result[MCPosition, Exception]:
+    """Get the position of a player.
+
+    Args:
+        player (str): The name of the player.
+
+    Returns:
+        Result[MCPosition, Exception]: The position of the player or an exception.
+    """
     raw_pos = await rcon_get(rt.psi, f"data get entity {player} Pos")
     raw_dim = await rcon_get(rt.psi, f"data get entity {player} Dimension")
 
