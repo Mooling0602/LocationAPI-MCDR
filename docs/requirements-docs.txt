@@ -1,6 +1,0 @@
-sphinx
-sphinx-rtd-theme
-sphinx-autodoc-typehints
-beartype
-returns
-mcdreforged
