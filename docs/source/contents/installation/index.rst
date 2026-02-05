@@ -29,7 +29,7 @@ Here are dependencies of this plugin:
 
 .. note::
 
-    Assuming you have installed and configured MCDReforged. If not, please first visit the `Docs <https://mcdreforged.com>`__ to install and configure MCDR.
+    Assuming you have installed and configured MCDReforged. If not, please first visit the `Docs <https://docs.mcdreforged.com>`__ to install and configure MCDR.
 
 .. list-table::
    :header-rows: 1
