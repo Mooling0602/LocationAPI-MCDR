@@ -3,17 +3,18 @@
 This module provides a set of dataclasses to represent points in 2D and 3D space,
 Minecraft positions (point + dimension), and named locations with metadata.
 """
+
 from beartype import beartype
 from dataclasses import dataclass, fields
 from typing import Self
 
-Primitive = str | int | float | bool | None
+type Primitive = str | int | float | bool | None
 """
 Type alias for primitive values.
 
 Including: :class:`str`, :class:`int`, :class:`float`, :class:`bool`, and :class:`None`.
 """
-OtherField = dict[str, Primitive]
+type OtherField = dict[str, Primitive]
 """
 Type alias for other fields in a location.
 
@@ -40,6 +41,7 @@ class Point3D:
     This class represents a point in 3D space with x, y, and z coordinates.
     It uses floating-point precision for coordinate values.
     """
+
     x: float
     """The x-coordinate of the point.
     """
@@ -61,7 +63,9 @@ class Point3D:
         :return: The Euclidean distance between this point and another point.
         """
         return (
-            (self.x - point.x) ** 2 + (self.y - point.y) ** 2 + (self.z - point.z) ** 2
+            (self.x - point.x) ** 2
+            + (self.y - point.y) ** 2
+            + (self.z - point.z) ** 2
         ) ** 0.5
 
     def distance2d_to(self, point: "Point3D | Point2D") -> float:
@@ -109,6 +113,7 @@ class Point2D:
     This class represents a point in 2D space with x and z coordinates.
     It uses floating-point precision for coordinate values.
     """
+
     x: float
     """The x-coordinate of the point.
     """
@@ -164,6 +169,7 @@ class MCPosition:
     This class represents a position in Minecraft with a 3D point and a dimension.
     It uses floating-point precision for coordinate values.
     """
+
     point: "Point3D"
     """The 3D point of the position.
     """
@@ -173,22 +179,18 @@ class MCPosition:
 
     @property
     def x(self) -> float:
-        """The x coordinate of the position.
-        """
+        """The x coordinate of the position."""
         return self.point.x
 
     @property
     def y(self) -> float:
-        """The y coordinate of the position.
-        """
+        """The y coordinate of the position."""
         return self.point.y
 
     @property
     def z(self) -> float:
-        """The z coordinate of the position.
-        """
+        """The z coordinate of the position."""
         return self.point.z
-
 
     def __str__(self) -> str:
         field_names = [f.name for f in fields(self)]
@@ -203,6 +205,7 @@ class Location:
     This class represents a location in Minecraft with a name, description, and other fields.
     It uses floating-point precision for coordinate values.
     """
+
     position: "MCPosition"
     """The position data of the location.
     """
@@ -218,20 +221,17 @@ class Location:
 
     @property
     def x(self) -> float:
-        """The x-coordinate of the location.
-        """
+        """The x-coordinate of the location."""
         return self.position.x
 
     @property
     def y(self) -> float:
-        """The y-coordinate of the location.
-        """
+        """The y-coordinate of the location."""
         return self.position.y
 
     @property
     def z(self) -> float:
-        """The z-coordinate of the location.
-        """
+        """The z-coordinate of the location."""
         return self.position.z
 
     def __post_init__(self):

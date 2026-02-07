@@ -14,3 +14,4 @@ API path: ``location_api``
    :maxdepth: 2
 
    Data Types<data_types.rst>
+   Type Check<type_check.rst>
