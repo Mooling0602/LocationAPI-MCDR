@@ -20,7 +20,8 @@ line-length = 79
 [dependency-groups]
 dev = ["ruff>=0.14.14", "ty>=0.0.14"]
 docs = [
-  "sphinx>=6.2.1",
+  "jieba>=0.42.1",
+  "sphinx>=9.0",
   "sphinx-autobuild>=2025.8.25",
   "sphinx-autodoc-typehints>=3.6.1",
   "sphinx-copybutton>=0.5.2",
