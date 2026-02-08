@@ -34,7 +34,7 @@ msgstr "这个模块致力于提供用于定位任意真实玩家位置的 API�
 msgid ""
 "To use APIs here, you must have set up `MCDReforged "
 "<https://docs.mcdreforged.com>`__ in your environment."
-msgstr "要使用此处的 API，你必须已经在你的环境中设置好了 <https://docs.mcdreforged.com>`__ 。"
+msgstr "要使用此处的 API，你必须已经在你的环境中设置好了 `MCDReforged <https://docs.mcdreforged.com>`__ 。"
 
 #: location_api.pos.get_dimension_from_server_reply:1 of
 msgid "Extracts a dimension string from a text content, like this:"
