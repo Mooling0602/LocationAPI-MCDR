@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationAPI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-07 11:24+0800\n"
+"POT-Creation-Date: 2026-02-08 11:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -31,9 +31,10 @@ msgstr "原始值的类型别名。"
 #: location_api.Primitive:3 of
 msgid ""
 "Including: :class:`str`, :class:`int`, :class:`float`, :class:`bool`, and"
-" :class:`None`."
-msgstr "包括 :class:`str`, :class:`int`, :class:`float`, :class:`bool`, and"
-" :class:`None`."
+" :obj:`None`."
+msgstr ""
+"包括 :class:`str`, :class:`int`, :class:`float`, :class:`bool`, and "
+":obj:`None`."
 
 #: location_api.OtherField:1 of
 msgid "Type alias for other fields in a location."
@@ -64,4 +65,3 @@ msgstr ""
 #: location_api.is_primitive:5 of
 msgid "True if the object is primitive, False otherwise."
 msgstr "如果是原始对象则返回真，否则返回假。"
-

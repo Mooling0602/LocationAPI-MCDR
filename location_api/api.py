@@ -1,5 +1,5 @@
-"""Publish stable APIs
-"""
+"""Publish stable APIs"""
+
 from location_api import Point2D, Point3D, MCPosition, Location
 from location_api.pos import get_player_pos
 
@@ -10,9 +10,10 @@ version = VERSION
 """
 
 __all__ = [
-    'Point2D',
-    'Point3D',
-    'MCPosition',
-    'Location',
-    'get_player_pos'
+    "version",
+    "Point2D",
+    "Point3D",
+    "MCPosition",
+    "Location",
+    "get_player_pos",
 ]

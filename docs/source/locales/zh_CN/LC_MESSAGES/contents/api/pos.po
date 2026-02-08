@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationAPI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-04 17:26+0800\n"
+"POT-Creation-Date: 2026-02-08 12:24+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -31,5 +31,218 @@ msgid ""
 msgstr "这个模块致力于提供用于定位任意真实玩家位置的 API。"
 
 #: location_api.pos:3 of
-msgid "To use APIs here, you must have set up MCDReforged in your environment."
-msgstr "要使用此处的 API，你必须已经在你的环境中设置好了 MCDReforged。"
+msgid ""
+"To use APIs here, you must have set up `MCDReforged "
+"<https://docs.mcdreforged.com>`__ in your environment."
+msgstr "要使用此处的 API，你必须已经在你的环境中设置好了 <https://docs.mcdreforged.com>`__ 。"
+
+#: location_api.pos.get_dimension_from_server_reply:1 of
+msgid "Extracts a dimension string from a text content, like this:"
+msgstr "从像这样的文本内容中解析出一个维度字符串："
+
+#: location_api.pos.get_dimension_from_server_reply:3 of
+msgid "``CleMooling has the following entity data: minecraft:overworld``"
+msgstr ""
+
+#: ../../source/contents/api/pos.rst
+msgid "参数"
+msgstr ""
+
+#: location_api.pos.get_dimension_from_server_reply:5 of
+msgid "The text content to extract the dimension from."
+msgstr "要用于解析维度的文本内容。"
+
+#: location_api.pos.get_dimension_from_server_reply:6
+#: location_api.pos.get_point3d_from_server_reply:6 of
+msgid "The name of the player. Defaults to :obj:`None`."
+msgstr "玩家的名字，默认为 :obj:`None`。"
+
+#: location_api.pos.get_dimension_from_server_reply:7 of
+msgid "The regex pattern to match the dimension. Defaults to :obj:`None`."
+msgstr "用于匹配维度的正则表达式，默认为 :obj:`None`。"
+
+#: ../../source/contents/api/pos.rst
+msgid "返回"
+msgstr ""
+
+#: location_api.pos.get_dimension_from_server_reply:9 of
+msgid "The extracted dimension string or :obj:`None` if not found."
+msgstr "解析出的维度字符串，如果没找到则为 :obj:`None`。"
+
+#: location_api.pos.get_point3d_from_server_reply:1 of
+msgid ""
+"Extracts a :class:`~location_api.Point3D` instance from a text content, "
+"like this:"
+msgstr "从像这样的文本内容中解析出一个 :class:`~location_api.Point3D` 实例："
+
+#: location_api.pos.get_point3d_from_server_reply:3 of
+msgid "``CleMooling has the following entity data: [-524.5d, 71.0d, -66.5d]``"
+msgstr ""
+
+#: location_api.pos.get_point3d_from_server_reply:5 of
+msgid "The text content to extract the 3d point from."
+msgstr "要用于解析出三维点的文本内容："
+
+#: location_api.pos.get_point3d_from_server_reply:7 of
+msgid "The regex pattern to match the 3d point. Defaults to :obj:`None`."
+msgstr "要用于匹配三维点的正则表达式，默认为 :obj:`None`。"
+
+#: location_api.pos.get_point3d_from_server_reply:9 of
+msgid ""
+"* :obj:`None` -- If matches ``No entity was found`` or if player name is "
+"provided but not found in log content. * :class:`~location_api.Point3D` "
+"-- If matches format like example."
+msgstr ""
+"* :obj:`None` -- 若匹配 ``No entity was found`` 或者给出了玩家名，但在日志内容中找不到。 * "
+":class:`~location_api.Point3D` -- 若匹配到像示例中的格式。"
+
+#: location_api.pos.get_point3d_from_server_reply:10 of
+msgid ""
+":obj:`None` -- If matches ``No entity was found`` or if player name is "
+"provided but not found in log content."
+msgstr ":obj:`None` -- 若匹配 ``No entity was found`` 或者给出了玩家名，但在日志内容中找不到。"
+
+#: location_api.pos.get_point3d_from_server_reply:11 of
+msgid ":class:`~location_api.Point3D` -- If matches format like example."
+msgstr ":class:`~location_api.Point3D` -- 若匹配到像示例中的格式。"
+
+#: ../../source/contents/api/pos.rst
+msgid "抛出"
+msgstr ""
+
+#: location_api.pos.get_point3d_from_server_reply:13 of
+msgid "If the 3d point cannot be extracted."
+msgstr "若三维点无法解析。"
+
+#: location_api.pos.safe_parse_dim:1 of
+msgid ""
+"A wrapper to get a dimension string from a string(rcon command result as "
+"server reply)."
+msgstr "一个包装器，用于从字符串（服务器回复的 RCON 命令结果）中获取维度字符串。"
+
+#: location_api.pos.safe_parse_dim:3 of
+msgid "Actually calls :data:`get_dimension_from_server_reply`."
+msgstr "实际上调用 :data:`get_dimension_from_server_reply`。"
+
+#: location_api.pos.safe_parse_dim:5 location_api.pos.safe_parse_pos:5 of
+msgid "The string to parse."
+msgstr "要解析的字符串。"
+
+#: location_api.pos.get_player_pos:3 location_api.pos.safe_parse_dim:6
+#: location_api.pos.safe_parse_pos:6 of
+msgid "The name of the player."
+msgstr "玩家的名字。"
+
+#: location_api.pos.safe_parse_dim:7 of
+msgid ""
+"The parsed dimension string, but actually a "
+":class:`~returns.result.Result` object."
+msgstr "解析后的维度字符串，实际上是一个 :class:`~returns.result.Result` 对象。"
+
+#: location_api.pos.safe_parse_pos:1 of
+msgid ""
+"A wrapper to get a :class:`~location_api.Point3D` instance from a "
+"string(rcon command result as server reply)."
+msgstr "一个包装器，用于从字符串（服务器回复的 RCON 命令结果）中获取一个 :class:`~location_api.Point3D` 实例。"
+
+#: location_api.pos.safe_parse_pos:3 of
+msgid "Actually calls :data:`get_point3d_from_server_reply`."
+msgstr "实际上调用 :data:`get_point3d_from_server_reply`。"
+
+#: location_api.pos.safe_parse_pos:7 of
+msgid ""
+"The parsed :class:`~location_api.Point3D` result, but actually a "
+":class:`~returns.result.Result` object."
+msgstr "解析后的 :class:`~location_api.Point3D` 结果，实际上是一个 :class:`~returns.result.Result` 对象。"
+
+#: location_api.pos.get_player_pos:1 of
+msgid "Get the position of a player."
+msgstr "获取玩家的位置。"
+
+#: location_api.pos.get_player_pos:5 of
+msgid "The position of the player or an exception."
+msgstr "玩家的位置或异常。"
+
+#~ msgid ""
+#~ "Extracts a Point3D instance from a "
+#~ "text content, like this: \"CleMooling "
+#~ "has the following entity data: [-524.5d,"
+#~ " 71.0d, -66.5d]\""
+#~ msgstr ""
+
+#~ msgid ""
+#~ "`None`: If matches \"No entity was "
+#~ "found\" or if player_name is provided"
+#~ " but not found in log_content."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":class:`~location_api.Point3D`: The extracted Point3D "
+#~ "instance, if matches format like "
+#~ "example."
+#~ msgstr ""
+
+#~ msgid "returns None"
+#~ msgstr ""
+
+#~ msgid "returns Point3D"
+#~ msgstr ""
+
+#~ msgid "return None"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If matches \"No entity was found\" "
+#~ "or if player_name is provided but "
+#~ "not found in log_content."
+#~ msgstr ""
+
+#~ msgid "return Point3D"
+#~ msgstr ""
+
+#~ msgid "The extracted Point3D instance, if matches format like example."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* `None`: If matches \"No entity "
+#~ "was found\" or if player_name is "
+#~ "provided but not found in log_content."
+#~ " * :class:`~location_api.Point3D`: If matches format "
+#~ "like example."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Extracts a dimension string from a "
+#~ "text content, like this: \"CleMooling "
+#~ "has the following entity data: "
+#~ "minecraft:overworld\""
+#~ msgstr ""
+
+#~ msgid "The regex pattern to match the dimension. Defaults to None."
+#~ msgstr ""
+
+#~ msgid "The extracted dimension string or None if not found."
+#~ msgstr ""
+
+#~ msgid "返回类型"
+#~ msgstr ""
+
+#~ msgid "The regex pattern to match the 3d point. Defaults to None."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "* :obj:`None`: If matches \"No entity"
+#~ " was found\" or if player_name is "
+#~ "provided but not found in log_content."
+#~ " * :class:`~location_api.Point3D`: If matches format "
+#~ "like example."
+#~ msgstr ""
+
+#~ msgid ""
+#~ ":obj:`None`: If matches \"No entity was"
+#~ " found\" or if player_name is "
+#~ "provided but not found in log_content."
+#~ msgstr ""
+
+#~ msgid ":class:`~location_api.Point3D`: If matches format like example."
+#~ msgstr ""

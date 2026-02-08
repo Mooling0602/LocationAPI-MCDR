@@ -4,15 +4,16 @@ This module provides a set of dataclasses to represent points in 2D and 3D space
 Minecraft positions (point + dimension), and named locations with metadata.
 """
 
-from beartype import beartype
 from dataclasses import dataclass, fields
 from typing import Self
+
+from beartype import beartype
 
 type Primitive = str | int | float | bool | None
 """
 Type alias for primitive values.
 
-Including: :class:`str`, :class:`int`, :class:`float`, :class:`bool`, and :class:`None`.
+Including: :class:`str`, :class:`int`, :class:`float`, :class:`bool`, and :obj:`None`.
 """
 type OtherField = dict[str, Primitive]
 """

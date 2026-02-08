@@ -163,7 +163,8 @@ intersphinx_mapping = {
     "python": (
         "https://docs.python.org/3",
         None if RTD else (None, "./python3-objects.inv"),
-    )  # always fetch from internet in rtd env
+    ),  # always fetch from internet in rtd env
+    "returns": ("https://returns.readthedocs.io/en/latest/", None),
 }
 # disable all auto external document references
 # implicit ref for general std domain is bad

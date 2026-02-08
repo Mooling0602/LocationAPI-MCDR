@@ -1,18 +1,16 @@
 """This module aims to provide apis to locate the position of any actual player.
 
-To use APIs here, you must have set up MCDReforged in your environment.
+To use APIs here, you must have set up `MCDReforged <https://docs.mcdreforged.com>`__ in your environment.
 """
-import asyncio
+
 import re
 
 from mcdreforged.api.all import CommandContext, CommandSource
 from moolings_rcon_api.api import rcon_get
-from returns.maybe import Some, Maybe
-from returns.result import Result, Success, Failure, safe
-from returns.converters import maybe_to_result
+from returns.result import Failure, Result, Success, safe
 
 import location_api.runtime as rt
-from location_api import Point3D, MCPosition
+from location_api import MCPosition, Point3D
 from location_api.utils import promote_to_result
 
 # _PSI: PluginServerInterface | None = None
@@ -35,20 +33,19 @@ def get_point3d_from_server_reply(
     content: str, player_name: str | None = None, regex: str | None = None
 ) -> Point3D | None:
     """
-    Extracts a Point3D instance from a text content, like this:
-    "CleMooling has the following entity data: [-524.5d, 71.0d, -66.5d]"
+    Extracts a :class:`~location_api.Point3D` instance from a text content, like this:
 
-    Args:
-        content (str): The text content to extract the 3d point from.
-        player_name (str | None, optional): The name of the player. Defaults to None.
-        regex (str | None, optional): The regex pattern to match the 3d point. Defaults to None.
+    ``CleMooling has the following entity data: [-524.5d, 71.0d, -66.5d]``
 
-    Returns:
-        None: If matches "No entity was found" or if player_name is provided but not found in log_content.
-        Point3D: The extracted Point3D instance, if matches format like example.
+    :param content: The text content to extract the 3d point from.
+    :param player_name: The name of the player. Defaults to :obj:`None`.
+    :param regex: The regex pattern to match the 3d point. Defaults to :obj:`None`.
 
-    Raises:
-        TypeError: If the 3d point cannot be extracted.
+    :returns:
+        * :obj:`None` -- If matches ``No entity was found`` or if player name is provided but not found in log content.
+        * :class:`~location_api.Point3D` -- If matches format like example.
+
+    :raises TypeError: If the 3d point cannot be extracted.
     """
     if "No entity was found" in content:
         return None
@@ -80,17 +77,18 @@ def get_point3d_from_server_reply(
     return Point3D(x=x, y=y, z=z)
 
 
-def get_dimension_from_server_reply(content: str, player: str | None = None, regex: str | None = None) -> str | None:
+def get_dimension_from_server_reply(
+    content: str, player: str | None = None, regex: str | None = None
+) -> str | None:
     """Extracts a dimension string from a text content, like this:
-    "CleMooling has the following entity data: minecraft:overworld"
 
-    Args:
-        content (str): The text content to extract the dimension from.
-        player (str | None, optional): The name of the player. Defaults to None.
-        regex (str | None, optional): The regex pattern to match the dimension. Defaults to None.
+    ``CleMooling has the following entity data: minecraft:overworld``
 
-    Returns:
-        str | None: The extracted dimension string or None if not found.
+    :param content: The text content to extract the dimension from.
+    :param player: The name of the player. Defaults to :obj:`None`.
+    :param regex: The regex pattern to match the dimension. Defaults to :obj:`None`.
+
+    :returns: The extracted dimension string or :obj:`None` if not found.
     """
     if player is not None and player not in content:
         return None
@@ -107,6 +105,14 @@ def get_dimension_from_server_reply(content: str, player: str | None = None, reg
 
 @safe
 def safe_parse_pos(pos_str: str, player: str) -> Point3D:
+    """A wrapper to get a :class:`~location_api.Point3D` instance from a string(rcon command result as server reply).
+
+    Actually calls :data:`get_point3d_from_server_reply`.
+
+    :param pos_str: The string to parse.
+    :param player: The name of the player.
+    :return: The parsed :class:`~location_api.Point3D` result, but actually a :class:`~returns.result.Result` object.
+    """
     result = get_point3d_from_server_reply(pos_str, player)
     if result is None:
         raise ValueError(f"No data received for {player}!")
@@ -115,6 +121,14 @@ def safe_parse_pos(pos_str: str, player: str) -> Point3D:
 
 @safe
 def safe_parse_dim(dim_str: str, player: str) -> str:
+    """A wrapper to get a dimension string from a string(rcon command result as server reply).
+
+    Actually calls :data:`get_dimension_from_server_reply`.
+
+    :param dim_str: The string to parse.
+    :param player: The name of the player.
+    :return: The parsed dimension string, but actually a :class:`~returns.result.Result` object.
+    """
     result = get_dimension_from_server_reply(dim_str)
     if result is None:
         raise ValueError(f"No data received for {player}!")
@@ -124,11 +138,9 @@ def safe_parse_dim(dim_str: str, player: str) -> str:
 async def get_player_pos(player: str) -> Result[MCPosition, Exception]:
     """Get the position of a player.
 
-    Args:
-        player (str): The name of the player.
+    :param player: The name of the player.
 
-    Returns:
-        Result[MCPosition, Exception]: The position of the player or an exception.
+    :return: The position of the player or an exception.
     """
     raw_pos = await rcon_get(rt.psi, f"data get entity {player} Pos")
     raw_dim = await rcon_get(rt.psi, f"data get entity {player} Dimension")
