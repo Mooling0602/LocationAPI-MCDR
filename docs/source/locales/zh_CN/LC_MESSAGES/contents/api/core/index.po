@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationAPI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-07 11:24+0800\n"
+"POT-Creation-Date: 2026-02-09 17:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -23,10 +23,6 @@ msgstr ""
 #: ../../source/contents/api/core/index.rst:13
 msgid "Data Types"
 msgstr "数据类型"
-
-#: ../../source/contents/api/core/index.rst:13
-msgid "Type Check"
-msgstr "类型检查"
 
 #: ../../source/contents/api/core/index.rst:3
 msgid "Core APIs"
@@ -52,4 +48,7 @@ msgid ""
 "3D space, Minecraft positions (point + dimension), and named locations "
 "with metadata."
 msgstr "此模块提供一组数据类来表示二维和三维空间中的点、Minecraft 位置（点 + 维度）以及具有元数据的命名位置。"
+
+#~ msgid "Type Check"
+#~ msgstr "类型检查"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationAPI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-05 15:56+0800\n"
+"POT-Creation-Date: 2026-02-09 17:32+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -80,8 +80,8 @@ msgid ""
 "first visit the `Docs <https://docs.mcdreforged.com>`__ to install and "
 "configure MCDR."
 msgstr ""
-"假设你已经安装和配置好了 MCDReforged。否则，请先访问 `文档 <https://docs.mcdreforged.com>`__ 来安装以及配置"
-" MCDR。"
+"假设你已经安装和配置好了 MCDReforged。否则，请先访问 `文档 <https://docs.mcdreforged.com>`__ "
+"来安装以及配置 MCDR。"
 
 #: ../../source/contents/installation/index.rst:37
 msgid "MCDR plugins"
@@ -100,8 +100,13 @@ msgid "`beartype <https://pypi.org/project/beartype>`__"
 msgstr ""
 
 #: ../../source/contents/installation/index.rst:42
+msgid "`primitive-type <https://pypi.org/project/primitive-type>`__"
+msgstr ""
+
+#: ../../source/contents/installation/index.rst:44
 msgid "`returns <https://pypi.org/project/returns>`__"
 msgstr ""
 
 #~ msgid "from sphinx.locale import __ Installation ============"
 #~ msgstr "安装指南"
+
