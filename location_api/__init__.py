@@ -299,6 +299,12 @@ class Location:
         :param data: The dict to deserialize.
         :returns: The deserialized :data:`Location` object.
         """
+        # check data
+        for k, v in data.items():
+            if ["x", "y", "z"] in k and "position" in k:
+                raise TypeError(
+                    "Invalid data: exists both coords and position!"
+                )
         position = data.get("position", None)
         if position:
             position = MCPosition.from_dict(position)
