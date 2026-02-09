@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationAPI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-08 11:59+0800\n"
+"POT-Creation-Date: 2026-02-09 15:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -24,44 +24,38 @@ msgstr ""
 msgid "Type Check"
 msgstr "类型检查"
 
-#: location_api.Primitive:1 of
-msgid "Type alias for primitive values."
-msgstr "原始值的类型别名。"
+#~ msgid "Type alias for primitive values."
+#~ msgstr "原始值的类型别名。"
 
-#: location_api.Primitive:3 of
-msgid ""
-"Including: :class:`str`, :class:`int`, :class:`float`, :class:`bool`, and"
-" :obj:`None`."
-msgstr ""
-"包括 :class:`str`, :class:`int`, :class:`float`, :class:`bool`, and "
-":obj:`None`."
+#~ msgid ""
+#~ "Including: :class:`str`, :class:`int`, "
+#~ ":class:`float`, :class:`bool`, and :obj:`None`."
+#~ msgstr ""
+#~ "包括 :class:`str`, :class:`int`, :class:`float`, "
+#~ ":class:`bool`, and :obj:`None`."
 
-#: location_api.OtherField:1 of
-msgid "Type alias for other fields in a location."
-msgstr "地点中其他信息的类型别名。"
+#~ msgid "Type alias for other fields in a location."
+#~ msgstr "地点中其他信息的类型别名。"
 
-#: location_api.OtherField:3 of
-msgid ""
-"This dictionary stores additional metadata for a location where keys are "
-"strings and values are primitive types (:data:`Primitive`)."
-msgstr "这个字典在地点中存储附加的元数据，其键为字符串，值为原始类型（:data:`Primitive`）"
+#~ msgid ""
+#~ "This dictionary stores additional metadata "
+#~ "for a location where keys are "
+#~ "strings and values are primitive types"
+#~ " (:data:`Primitive`)."
+#~ msgstr "这个字典在地点中存储附加的元数据，其键为字符串，值为原始类型（:data:`Primitive`）"
 
-#: location_api.is_primitive:1 of
-msgid "Check an object if it's a primitive object."
-msgstr "检查一个对象是否为原始对象。"
+#~ msgid "Check an object if it's a primitive object."
+#~ msgstr "检查一个对象是否为原始对象。"
 
-#: ../../source/contents/api/core/type_check.rst
-msgid "参数"
-msgstr ""
+#~ msgid "参数"
+#~ msgstr ""
 
-#: location_api.is_primitive:3 of
-msgid "Any instance for checking if it's a primitive object."
-msgstr "任何需要检查是否为原始对象的实例。"
+#~ msgid "Any instance for checking if it's a primitive object."
+#~ msgstr "任何需要检查是否为原始对象的实例。"
 
-#: ../../source/contents/api/core/type_check.rst
-msgid "返回"
-msgstr ""
+#~ msgid "返回"
+#~ msgstr ""
 
-#: location_api.is_primitive:5 of
-msgid "True if the object is primitive, False otherwise."
-msgstr "如果是原始对象则返回真，否则返回假。"
+#~ msgid "True if the object is primitive, False otherwise."
+#~ msgstr "如果是原始对象则返回真，否则返回假。"
+

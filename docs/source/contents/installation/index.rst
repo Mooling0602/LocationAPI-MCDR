@@ -39,4 +39,6 @@ Here are dependencies of this plugin:
    * - `MoolingsRconAPI <https://mcdreforged.com/plugin/moolings_rcon_api>`__
      - `beartype <https://pypi.org/project/beartype>`__
    * -
+     - `primitive-type <https://pypi.org/project/primitive-type>`__
+   * -
      - `returns <https://pypi.org/project/returns>`__

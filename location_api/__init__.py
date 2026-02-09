@@ -8,30 +8,11 @@ from dataclasses import dataclass, fields
 from typing import Self
 
 from beartype import beartype
-
-type Primitive = str | int | float | bool | None
-"""
-Type alias for primitive values.
-
-Including: :class:`str`, :class:`int`, :class:`float`, :class:`bool`, and :obj:`None`.
-"""
-type OtherField = dict[str, Primitive]
-"""
-Type alias for other fields in a location.
-
-This dictionary stores additional metadata for a location where keys are strings
-and values are primitive types (:data:`Primitive`).
-"""
-
-
-def is_primitive(val: object) -> bool:
-    """Check an object if it's a primitive object.
-
-    :param val: Any instance for checking if it's a primitive object.
-
-    :return: True if the object is primitive, False otherwise.
-    """
-    return isinstance(val, (str, int, float, bool)) or val is None
+from primitive_type import (
+    PrimitiveMap,
+    get_primitive_object,
+    is_nested_dict,
+)
 
 
 @dataclass
@@ -198,6 +179,50 @@ class MCPosition:
         values = [f"{_name}={getattr(self, _name)}" for _name in field_names]
         return f"{self.__class__.__name__}({', '.join(values)})"
 
+    def asdict(self) -> dict:
+        """Serialize :data:`MCPosition` object into a dict.
+
+        :returns: The serialized dict.
+        """
+        return {
+            "x": self.x,
+            "y": self.y,
+            "z": self.z,
+            "dimension": self.dimension,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict) -> Self:
+        """Deserialize :data:`MCPosition` object from a dict.
+
+        :param data: The dict to deserialize.
+        :returns: The deserialized :data:`MCPosition` object.
+        """
+        dimension = get_primitive_object(
+            data.get("dimension", data.get("dim", None)), str
+        )
+        assert isinstance(dimension, str)
+        # check data
+        for k, v in data.items():
+            if ["x", "y", "z"] in k and "point" in k:
+                raise TypeError("Invalid data: exists both coords and point!")
+        point = data.get("point", None)
+        if point:
+            x = get_primitive_object(data.get("x"), float)
+            assert isinstance(x, float)
+            y = get_primitive_object(data.get("y"), float)
+            assert isinstance(y, float)
+            z = get_primitive_object(data.get("z"), float)
+            assert isinstance(z, float)
+        else:
+            x = get_primitive_object(data.get("x"), float)
+            assert isinstance(x, float)
+            y = get_primitive_object(data.get("y"), float)
+            assert isinstance(y, float)
+            z = get_primitive_object(data.get("z"), float)
+            assert isinstance(z, float)
+        return cls(point=Point3D(x, y, z), dimension=dimension)
+
 
 @dataclass
 class Location:
@@ -216,7 +241,7 @@ class Location:
     description: str | None = None
     """The description of the location.
     """
-    other: OtherField | None = None
+    other: PrimitiveMap | None = None
     """Other informations about the location.
     """
 
@@ -235,16 +260,78 @@ class Location:
         """The z-coordinate of the location."""
         return self.position.z
 
+    @property
+    def dimension(self) -> str:
+        """The dimension of the location."""
+        return self.position.dimension
+
     def __post_init__(self):
         if self.other:
-            for k, v in self.other.items():
-                if not is_primitive(v):
-                    raise TypeError(
-                        f"Invalid value for key '{k}': {v!r} (type {type(v).__name__}). "
-                        f"Reason: Nested structures are not allowed."
-                    )
+            if is_nested_dict(self.other):
+                raise TypeError(
+                    "Nested structures are not allowed in other field."
+                )
 
     def __str__(self):
         field_names = [f.name for f in fields(self)]
         values = [f"{_name}={getattr(self, _name)}" for _name in field_names]
         return f"{self.__class__.__name__}({', '.join(values)})"
+
+    def asdict(self) -> dict:
+        """Serialize :data:`Location` object into a dict.
+
+        :returns: The serialized dict.
+        """
+        return {
+            "x": self.x,
+            "y": self.y,
+            "z": self.z,
+            "dimension": self.dimension,
+            "name": self.name,
+            "description": self.description,
+            "other": self.other,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict) -> Self:
+        """Deserialize :data:`Location` object from a dict.
+
+        :param data: The dict to deserialize.
+        :returns: The deserialized :data:`Location` object.
+        """
+        position = data.get("position", None)
+        if position:
+            position = MCPosition.from_dict(position)
+            x = position.x
+            y = position.y
+            z = position.z
+            dimension = position.dimension
+        else:
+            x = get_primitive_object(data.get("x"), float)
+            y = get_primitive_object(data.get("y"), float)
+            z = get_primitive_object(data.get("z"), float)
+            assert isinstance(x, float)
+            assert isinstance(y, float)
+            assert isinstance(z, float)
+            dimension = data.get("dimension", data.get("dim", None))
+            if dimension:
+                dimension = get_primitive_object(dimension)
+                assert isinstance(dimension, str)
+        name = get_primitive_object(data.get("name"), str)
+        assert isinstance(name, str)
+        description = data.get("description", data.get("desc", None))
+        if description:
+            description = get_primitive_object(description, str)
+            assert isinstance(description, str)
+        other = data.get("other", None)
+        if other:
+            if not is_nested_dict(other):
+                raise TypeError(
+                    "Nested structures are not allowed in other field."
+                )
+        return cls(
+            MCPosition(Point3D(x, y, z), dimension), name, description, other
+        )
+
+
+# if __name__ == "__main__":

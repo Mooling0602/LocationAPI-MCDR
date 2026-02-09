@@ -8,6 +8,7 @@ dependencies = [
   "beartype>=0.20.0",
   "mcdreforged>=2.1.0",
   "moolings-rcon-api>=0.1.0",
+  "primitive-type>=0.1.0",
   "returns>=0.26.0",
 ]
 

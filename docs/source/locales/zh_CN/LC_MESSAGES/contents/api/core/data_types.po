@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationAPI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-04 16:21+0800\n"
+"POT-Creation-Date: 2026-02-09 15:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -204,6 +204,26 @@ msgstr "该位置的 y 坐标。"
 msgid "The z coordinate of the position."
 msgstr "该位置的 z 坐标。"
 
+#: location_api.MCPosition.asdict:1 of
+msgid "Serialize :data:`MCPosition` object into a dict."
+msgstr "将 :data:`MCPosition` 对象序列化成字典。"
+
+#: location_api.Location.asdict:3 location_api.MCPosition.asdict:3 of
+msgid "The serialized dict."
+msgstr "序列化后（得到）的字典。"
+
+#: location_api.MCPosition.from_dict:1 of
+msgid "Deserialize :data:`MCPosition` object from a dict."
+msgstr "从字典中反序列化出 :data:`MCPosition` 对象。"
+
+#: location_api.Location.from_dict:3 location_api.MCPosition.from_dict:3 of
+msgid "The dict to deserialize."
+msgstr "要（进行）反序列化的字典。"
+
+#: location_api.MCPosition.from_dict:4 of
+msgid "The deserialized :data:`MCPosition` object."
+msgstr "反序列化出的 :data:`MCPosition` 对象。"
+
 #: ../../source/contents/api/core/data_types.rst:32
 msgid "Location"
 msgstr "Location（地点）"
@@ -249,3 +269,19 @@ msgstr "该地点的 y 坐标。"
 #: location_api.Location.z:1 of
 msgid "The z-coordinate of the location."
 msgstr "该地点的 z 坐标。"
+
+#: location_api.Location.dimension:1 of
+msgid "The dimension of the location."
+msgstr "该地点的维度。"
+
+#: location_api.Location.asdict:1 of
+msgid "Serialize :data:`Location` object into a dict."
+msgstr "将 :data:`Location` 对象序列化为字典。"
+
+#: location_api.Location.from_dict:1 of
+msgid "Deserialize :data:`Location` object from a dict."
+msgstr "从字典中反序列化 :data:`Location` 对象。"
+
+#: location_api.Location.from_dict:4 of
+msgid "The deserialized :data:`Location` object."
+msgstr "反序列化出的 :data:`Location` 对象。"

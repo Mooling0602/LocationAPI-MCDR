@@ -94,24 +94,39 @@ class TestLocationAPI(unittest.TestCase):
         """测试MCPosition和Location类的x, y, z自动推导属性"""
         point3d = Point3D(1.5, 2.5, 3.5)
         position = MCPosition(point3d, "minecraft:overworld")
-        
+
         # 测试 MCPosition 的 x, y, z 属性
         self.assertEqual(position.x, 1.5)
         self.assertEqual(position.y, 2.5)
         self.assertEqual(position.z, 3.5)
 
         location = Location(position, "Test Location")
-        
+
         # 测试 Location 的 x, y, z 属性
         self.assertEqual(location.x, 1.5)
         self.assertEqual(location.y, 2.5)
         self.assertEqual(location.z, 3.5)
 
+    def test_mcposition_and_location_as_or_from_dict(self):
+        """测试MCPosition和Location类的字典转换方法"""
+        position = MCPosition(
+            Point3D(12.3422, 64, 786.4633), "minecraft:overworld"
+        )
+        self.assertEqual(
+            position.asdict(),
+            {
+                "x": 12.3422,
+                "y": 64,
+                "z": 786.4633,
+                "dimension": "minecraft:overworld",
+            },
+        )
+
     def test_point3d_distance_to(self):
         """测试Point3D类的3D距离计算"""
         point1 = Point3D(0.0, 0.0, 0.0)
         point2 = Point3D(3.0, 4.0, 0.0)
-        
+
         # 3-4-5三角形在XY平面，距离应该是5.0
         distance = point1.distance_to(point2)
         self.assertAlmostEqual(distance, 5.0, places=3)
@@ -120,7 +135,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试Point3D类的2D距离计算（与另一个Point3D）"""
         point1 = Point3D(0.0, 10.0, 0.0)  # 高度不同
         point2 = Point3D(3.0, 20.0, 4.0)  # 高度不同
-        
+
         # 2D距离应该忽略y坐标：sqrt(3² + 4²) = 5.0
         distance = point1.distance2d_to(point2)
         self.assertAlmostEqual(distance, 5.0, places=3)
@@ -129,7 +144,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试Point3D类的2D距离计算（与Point2D）"""
         point3d = Point3D(0.0, 10.0, 0.0)
         point2d = Point2D(3.0, 4.0)
-        
+
         distance = point3d.distance2d_to(point2d)
         self.assertAlmostEqual(distance, 5.0, places=3)
 
@@ -137,7 +152,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试Point3D类的高度差计算"""
         point1 = Point3D(0.0, 10.0, 0.0)
         point2 = Point3D(5.0, 25.0, 5.0)
-        
+
         height_diff = point1.height_to(point2)
         self.assertAlmostEqual(height_diff, 15.0, places=3)
 
@@ -145,7 +160,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试从Point2D创建Point3D"""
         point2d = Point2D(1.0, 2.0)
         point3d = Point3D.from_point2d(point2d, y=3.0)
-        
+
         self.assertEqual(point3d.x, 1.0)
         self.assertEqual(point3d.y, 3.0)
         self.assertEqual(point3d.z, 2.0)
@@ -154,7 +169,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试Point3D转换为Point2D"""
         point3d = Point3D(1.0, 2.0, 3.0)
         point2d = point3d.to_point2d()
-        
+
         self.assertEqual(point2d.x, 1.0)
         self.assertEqual(point2d.z, 3.0)
 
@@ -162,7 +177,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试Point2D类的距离计算"""
         point1 = Point2D(0.0, 0.0)
         point2 = Point2D(3.0, 4.0)
-        
+
         distance = point1.distance_to(point2)
         self.assertAlmostEqual(distance, 5.0, places=3)
 
@@ -170,7 +185,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试Point2D类的2D距离计算（与另一个Point2D）"""
         point1 = Point2D(0.0, 0.0)
         point2 = Point2D(3.0, 4.0)
-        
+
         distance = point1.distance2d_to(point2)
         self.assertAlmostEqual(distance, 5.0, places=3)
 
@@ -178,7 +193,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试Point2D类的2D距离计算（与Point3D）"""
         point2d = Point2D(0.0, 0.0)
         point3d = Point3D(3.0, 10.0, 4.0)  # 高度被忽略
-        
+
         distance = point2d.distance2d_to(point3d)
         self.assertAlmostEqual(distance, 5.0, places=3)
 
@@ -186,7 +201,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试Point2D转换为Point3D"""
         point2d = Point2D(1.0, 2.0)
         point3d = point2d.to_point3d(y=3.0)
-        
+
         self.assertEqual(point3d.x, 1.0)
         self.assertEqual(point3d.y, 3.0)
         self.assertEqual(point3d.z, 2.0)
@@ -195,7 +210,7 @@ class TestLocationAPI(unittest.TestCase):
         """测试Point2D.from_point3d方法（已存在但确保完整）"""
         point3d = Point3D(1.0, 2.0, 3.0)
         point2d = Point2D.from_point3d(point3d)
-        
+
         self.assertEqual(point2d.x, 1.0)
         self.assertEqual(point2d.z, 3.0)
 
