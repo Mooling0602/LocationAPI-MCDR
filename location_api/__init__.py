@@ -208,9 +208,9 @@ class MCPosition:
                 raise TypeError("Invalid data: exists both coords and point!")
         point = data.get("point", None)
         if point:
-            x = get_float_object(data.get("x"))
-            y = get_float_object(data.get("y"))
-            z = get_float_object(data.get("z"))
+            x = get_float_object(point.get("x"))
+            y = get_float_object(point.get("y"))
+            z = get_float_object(point.get("z"))
         else:
             x = get_float_object(data.get("x"))
             y = get_float_object(data.get("y"))
