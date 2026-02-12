@@ -112,6 +112,20 @@ class TestLocationAPI(unittest.TestCase):
         position = MCPosition(
             Point3D(12.3422, 64, 786.4633), "minecraft:overworld"
         )
+        data_folded = {
+            "point": {
+                "x": 12.3422,
+                "y": 64,
+                "z": 786.4633,
+            },
+            "dimension": "minecraft:overworld",
+        }
+        data_primitived = {
+            "x": 12.3422,
+            "y": 64,
+            "z": 786.4633,
+            "dimension": "minecraft:overworld",
+        }
         self.assertEqual(
             position.asdict(),
             {
@@ -121,6 +135,8 @@ class TestLocationAPI(unittest.TestCase):
                 "dimension": "minecraft:overworld",
             },
         )
+        self.assertEqual(MCPosition.from_dict(data_folded), position)
+        self.assertEqual(MCPosition.from_dict(data_primitived), position)
 
     def test_point3d_distance_to(self):
         """测试Point3D类的3D距离计算"""

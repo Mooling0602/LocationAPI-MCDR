@@ -204,7 +204,7 @@ class MCPosition:
         )
         # check data
         for k, v in data.items():
-            if ["x", "y", "z"] in k and "point" in k:
+            if any(item in k for item in ["x", "y", "z"]) and "point" in k:
                 raise TypeError("Invalid data: exists both coords and point!")
         point = data.get("point", None)
         if point:
@@ -295,7 +295,7 @@ class Location:
         """
         # check data
         for k, v in data.items():
-            if ["x", "y", "z"] in k and "position" in k:
+            if any(item in k for item in ["x", "y", "z"]) and "point" in k:
                 raise TypeError(
                     "Invalid data: exists both coords and position!"
                 )
