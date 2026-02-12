@@ -1,4 +1,4 @@
 mcdreforged>=2.14.1
 beartype
 returns
-primitive-type>=0.1.0
+primitive-type>=0.1.2
