@@ -10,7 +10,8 @@ from typing import Self
 from beartype import beartype
 from primitive_type import (
     PrimitiveMap,
-    get_primitive_object,
+    get_str_object,
+    get_float_object,
     is_nested_dict,
 )
 
@@ -198,29 +199,22 @@ class MCPosition:
         :param data: The dict to deserialize.
         :returns: The deserialized :data:`MCPosition` object.
         """
-        dimension = get_primitive_object(
-            data.get("dimension", data.get("dim", None)), str
+        dimension = get_str_object(
+            data.get("dimension", data.get("dim", None))
         )
-        assert isinstance(dimension, str)
         # check data
         for k, v in data.items():
             if ["x", "y", "z"] in k and "point" in k:
                 raise TypeError("Invalid data: exists both coords and point!")
         point = data.get("point", None)
         if point:
-            x = get_primitive_object(data.get("x"), float)
-            assert isinstance(x, float)
-            y = get_primitive_object(data.get("y"), float)
-            assert isinstance(y, float)
-            z = get_primitive_object(data.get("z"), float)
-            assert isinstance(z, float)
+            x = get_float_object(data.get("x"))
+            y = get_float_object(data.get("y"))
+            z = get_float_object(data.get("z"))
         else:
-            x = get_primitive_object(data.get("x"), float)
-            assert isinstance(x, float)
-            y = get_primitive_object(data.get("y"), float)
-            assert isinstance(y, float)
-            z = get_primitive_object(data.get("z"), float)
-            assert isinstance(z, float)
+            x = get_float_object(data.get("x"))
+            y = get_float_object(data.get("y"))
+            z = get_float_object(data.get("z"))
         return cls(point=Point3D(x, y, z), dimension=dimension)
 
 
@@ -313,22 +307,16 @@ class Location:
             z = position.z
             dimension = position.dimension
         else:
-            x = get_primitive_object(data.get("x"), float)
-            y = get_primitive_object(data.get("y"), float)
-            z = get_primitive_object(data.get("z"), float)
-            assert isinstance(x, float)
-            assert isinstance(y, float)
-            assert isinstance(z, float)
+            x = get_float_object(data.get("x"))
+            y = get_float_object(data.get("y"))
+            z = get_float_object(data.get("z"))
             dimension = data.get("dimension", data.get("dim", None))
             if dimension:
-                dimension = get_primitive_object(dimension)
-                assert isinstance(dimension, str)
-        name = get_primitive_object(data.get("name"), str)
-        assert isinstance(name, str)
+                dimension = get_str_object(dimension)
+        name = get_str_object(data.get("name"))
         description = data.get("description", data.get("desc", None))
         if description:
-            description = get_primitive_object(description, str)
-            assert isinstance(description, str)
+            description = get_str_object(description)
         other = data.get("other", None)
         if other:
             if not is_nested_dict(other):
