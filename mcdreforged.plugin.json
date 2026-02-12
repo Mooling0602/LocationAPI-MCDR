@@ -1,6 +1,6 @@
 {
   "id": "location_api",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "name": "LocationAPI",
   "description": {
     "en_us": "An API to define location or positon points.",
