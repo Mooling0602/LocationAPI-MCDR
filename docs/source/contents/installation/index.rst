@@ -36,9 +36,9 @@ Here are dependencies of this plugin:
 
    * - MCDR plugins
      - Python(PyPI) packages
-   * - `MoolingsRconAPI <https://mcdreforged.com/plugin/moolings_rcon_api>`__
+   * - `MoolingsRconAPI <https://mcdreforged.com/plugin/moolings_rcon_api>`__ >= 0.1.0
      - `beartype <https://pypi.org/project/beartype>`__
    * -
-     - `primitive-type <https://pypi.org/project/primitive-type>`__
+     - `primitive-type <https://pypi.org/project/primitive-type>`__ >= 0.1.2
    * -
      - `returns <https://pypi.org/project/returns>`__
