@@ -1,7 +1,7 @@
 LocationAPI documentation
 =========================
 
-`English <https://docs.staringplanet.top/location_api/en_US>`__ | `中文（简体） <https://docs.staringplanet.top/location_api/zh_CN>`__
+`English <index.html>`__ | `中文（简体） <zh_CN/index.html>`__
 
 Here is the documentation for LocationAPI, a plugin for MCDR that provides useful APIs for managing locations.
 
