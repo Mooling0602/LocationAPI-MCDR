@@ -37,12 +37,12 @@ jobs:
         run: |
           cd docs
           uv run ./build_docs.sh
-          uv run ./build_docs.sh zh_CN
+          uv run ./build_docs.sh en_US
           echo "Copying builds..."
           mkdir -p ../public
-          mkdir -p ../public/zh_CN
+          mkdir -p ../public/en_US
           cp -r build/html/* ../public/
-          cp -r build/html_zh_CN/* ../public/zh_CN/
+          cp -r build/html_en_US/* ../public/en_US/
           cd ..
 
       - name: Deploy to Cloudflare Pages
