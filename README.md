@@ -2,7 +2,7 @@
 
 An API to define location or positon points.
 
-Documentation is [here](https://docs.staringplanet.top/location_api).
+Documentation is [here](https://docs.staringplanet.top/location-api).
 > 可点击蓝色字体进入文档，可在文档主页中切换语言。
 
 ## 描述
