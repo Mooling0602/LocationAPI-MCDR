@@ -36,18 +36,13 @@ jobs:
       - name: Build Sphinx Documentation
         run: |
           cd docs
-          uv run make clean
-          uv run make html
-          uv run make gettext
-          uv run sphinx-intl update -p build/gettext -l zh_CN
-          uv run make -e SPHINXOPTS="-D language='zh_CN'" html
+          uv run ./build_docs.sh
+          uv run ./build_docs.sh zh_CN
           echo "Copying builds..."
           mkdir -p ../public
           mkdir -p ../public/zh_CN
           cp -r build/html/* ../public/
-          if [ -d "build/html_zh_CN" ]; then
-            cp -r build/html_zh_CN/* ../public/zh_CN/
-          fi
+          cp -r build/html_zh_CN/* ../public/zh_CN/
           cd ..
 
       - name: Deploy to Cloudflare Pages
