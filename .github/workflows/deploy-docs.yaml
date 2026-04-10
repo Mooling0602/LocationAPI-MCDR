@@ -1,0 +1,60 @@
+name: Deploy Sphinx Docs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "pyproject.toml"
+      - ".github/workflows/deploy-docs.yaml"
+    paths-ignore:
+      - "**.sh"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Checkout version
+        uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Setup Python
+        run: uv python install 3.12
+
+      - name: Install Dependencies
+        run: |
+          uv sync --all-groups --no-progress
+
+      - name: Build Sphinx Documentation
+        run: |
+          cd docs
+          make clean
+          make html
+          make gettext
+          sphinx-intl update -p build/gettext -l zh_CN
+          make -e SPHINXOPTS="-D language='zh_CN'" html
+          echo "Copying builds..."
+          mkdir -p ../public
+          mkdir -p ../public/zh_CN
+          cp -r build/html/* ../public/
+          if [ -d "build/html_zh_CN" ]; then
+            cp -r build/html_zh_CN/* ../public/zh_CN/
+          fi
+          cd ..
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=location-api-pydocs --branch=main
