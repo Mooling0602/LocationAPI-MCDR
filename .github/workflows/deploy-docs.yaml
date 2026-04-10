@@ -36,11 +36,11 @@ jobs:
       - name: Build Sphinx Documentation
         run: |
           cd docs
-          make clean
-          make html
-          make gettext
-          sphinx-intl update -p build/gettext -l zh_CN
-          make -e SPHINXOPTS="-D language='zh_CN'" html
+          uv run make clean
+          uv run make html
+          uv run make gettext
+          uv run sphinx-intl update -p build/gettext -l zh_CN
+          uv run make -e SPHINXOPTS="-D language='zh_CN'" html
           echo "Copying builds..."
           mkdir -p ../public
           mkdir -p ../public/zh_CN
