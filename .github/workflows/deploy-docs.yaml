@@ -8,8 +8,6 @@ on:
       - "docs/**"
       - "pyproject.toml"
       - ".github/workflows/deploy-docs.yaml"
-    paths-ignore:
-      - "**.sh"
 
 jobs:
   build-and-deploy:
