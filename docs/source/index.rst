@@ -1,7 +1,7 @@
 LocationAPI documentation
 =========================
 
-`English <index.html>`__ | `中文（简体） <zh_CN/index.html>`__
+`English <en_US/index.html>`__ | `中文（简体） <index.html>`__
 
 Here is the documentation for LocationAPI, a plugin for MCDR that provides useful APIs for managing locations.
 
