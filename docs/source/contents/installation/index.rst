@@ -17,7 +17,7 @@ Install manually
 
 You can get the ``*.mcdr`` plugin packages from:
 
-- `GitHub Releases <https://github.com/Mooling0602/LocationAPI/releases>`__
+- `GitHub Releases <https://github.com/Mooling0602/LocationAPI-MCDR/releases>`__
 - `PluginCatalogue Website <https://mcdreforged.com/plugin/location_api>`__
 
 Then put the file example ``LocationAPI-v0.3.0.mcdr`` into the ``/path/to/mcdr_env/plugins`` folder.

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LocationAPI \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-09 17:32+0800\n"
+"POT-Creation-Date: 2026-07-05 15:44+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -51,8 +51,11 @@ msgid "You can get the ``*.mcdr`` plugin packages from:"
 msgstr "你可以从这些地方获取 ``*.mcdr`` 插件包："
 
 #: ../../source/contents/installation/index.rst:20
-msgid "`GitHub Releases <https://github.com/Mooling0602/LocationAPI/releases>`__"
-msgstr "`GitHub 发行页面 <https://github.com/Mooling0602/LocationAPI/releases>`__"
+#, fuzzy
+msgid ""
+"`GitHub Releases <https://github.com/Mooling0602/LocationAPI-"
+"MCDR/releases>`__"
+msgstr "`GitHub 发行页面 <https://github.com/Mooling0602/LocationAPI-MCDR/releases>`__"
 
 #: ../../source/contents/installation/index.rst:21
 msgid "`PluginCatalogue Website <https://mcdreforged.com/plugin/location_api>`__"
@@ -92,7 +95,10 @@ msgid "Python(PyPI) packages"
 msgstr "Python(PyPI) 包"
 
 #: ../../source/contents/installation/index.rst:39
-msgid "`MoolingsRconAPI <https://mcdreforged.com/plugin/moolings_rcon_api>`__"
+#, fuzzy
+msgid ""
+"`MoolingsRconAPI <https://mcdreforged.com/plugin/moolings_rcon_api>`__ >="
+" 0.1.0"
 msgstr "`MoolingsRconAPI <https://mcdreforged.com/plugin/moolings_rcon_api>`__"
 
 #: ../../source/contents/installation/index.rst:40
@@ -100,7 +106,7 @@ msgid "`beartype <https://pypi.org/project/beartype>`__"
 msgstr ""
 
 #: ../../source/contents/installation/index.rst:42
-msgid "`primitive-type <https://pypi.org/project/primitive-type>`__"
+msgid "`primitive-type <https://pypi.org/project/primitive-type>`__ >= 0.1.2"
 msgstr ""
 
 #: ../../source/contents/installation/index.rst:44
@@ -109,4 +115,7 @@ msgstr ""
 
 #~ msgid "from sphinx.locale import __ Installation ============"
 #~ msgstr "安装指南"
+
+#~ msgid "`primitive-type <https://pypi.org/project/primitive-type>`__"
+#~ msgstr ""
 
